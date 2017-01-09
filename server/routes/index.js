@@ -14,7 +14,7 @@ function returnIndexPage(request, response) {
 }
 
 function getSmiley(request, response) {
-  response.send("lol "+cool());
+  response.send("lol "+cool()+" lol");
 }
 
 function countToTimes(request, response) {
