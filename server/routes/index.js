@@ -8,6 +8,13 @@ router.get('/cool', getSmiley);
 router.get('/times', countToTimes);
 router.get('/db', findAllFromTestTable);
 router.get('/error', causeError);
+// *** api routes *** //
+
+router.get('/blobs', findAllBlobs);
+router.get('/blob/:id', findBlobById);
+router.post('/blobs', addBlob);
+router.put('/blob/:id', updateBlob);
+router.delete('/blob/:id', deleteBlob);
 
 function returnIndexPage(request, response) {
   response.render('pages/index');
@@ -40,6 +47,25 @@ function findAllFromTestTable(request, response) {
 function causeError(request, response) {
   var a;
   console.log(a.length);
+}
+
+function findAllBlobs(request, response) {
+
+}
+
+function findBlobById(request, response) {
+  
+}
+function addBlob(request, response) {
+  
+}
+
+function updateBlob(request, response) {
+  
+}
+
+function deleteBlob(request, response) {
+  
 }
 
 module.exports = router;

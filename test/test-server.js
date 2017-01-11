@@ -10,7 +10,7 @@ chai.use(chaiHttp);
 
 describe('Heroku test app', function() {
 
-	it('should show a smiley /blobs GET', function(done) {
+	it('/cool GET response should contain lol', function(done) {
 	 	chai.request(server)
 		.get('/cool')
 		.end(function(err, res){
