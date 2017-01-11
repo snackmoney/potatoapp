@@ -2,6 +2,8 @@ var cool = require('cool-ascii-faces');
 var express = require('express');
 var router = express.Router();
 var pg = require('pg');
+var db = require('../models/queries.js');
+const connectionString = process.env.DATABASE_URL || 'postgres://localhost:5432/todo';
 
 router.get('/', returnIndexPage);
 router.get('/cool', getSmiley);
@@ -10,11 +12,11 @@ router.get('/db', findAllFromTestTable);
 router.get('/error', causeError);
 // *** api routes *** //
 
-router.get('/blobs', findAllBlobs);
-router.get('/blob/:id', findBlobById);
-router.post('/blobs', addBlob);
-router.put('/blob/:id', updateBlob);
-router.delete('/blob/:id', deleteBlob);
+router.get('/blobs', db.getAllBlobs);
+router.get('/blob/:id', db.getBlobById);
+router.post('/blob', db.createBlob);
+router.put('/blob/:id', db.updateBlob);
+router.delete('/blob/:id', db.deleteBlob);
 
 function returnIndexPage(request, response) {
   response.render('pages/index');
@@ -47,25 +49,6 @@ function findAllFromTestTable(request, response) {
 function causeError(request, response) {
   var a;
   console.log(a.length);
-}
-
-function findAllBlobs(request, response) {
-
-}
-
-function findBlobById(request, response) {
-  
-}
-function addBlob(request, response) {
-  
-}
-
-function updateBlob(request, response) {
-  
-}
-
-function deleteBlob(request, response) {
-  
 }
 
 module.exports = router;

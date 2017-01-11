@@ -10,3 +10,4 @@ var blobSchema = new Schema({
 module.exports = mongoose.model('blobs', blobSchema);
 */
 
+var Blob
