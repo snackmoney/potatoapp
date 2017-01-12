@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "start_local": "node app.js | psql -f blob.sql",
-    "start": "heroku pg:psql -f server/models/blob.sql",
+    "start": "pg:psql -f server/models/blob.sql",
     "test": "mocha --reporter list"
   },
   "dependencies": {
