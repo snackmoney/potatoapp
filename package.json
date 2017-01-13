@@ -7,7 +7,7 @@
   },
   "main": "index.js",
   "scripts": {
-    "start_local": "node app.js | psql -f blob.sql",
+    "start_local": "node app.js",
     "start": "psql -l",
     "test": "mocha --reporter list"
   },

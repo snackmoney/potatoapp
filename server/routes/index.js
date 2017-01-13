@@ -23,7 +23,7 @@ function returnIndexPage(request, response) {
 }
 
 function getSmiley(request, response) {
-  response.send("lol "+cool()+" lol");
+  response.send("lol "+cool()+" lol daniel");
 }
 
 function countToTimes(request, response) {
